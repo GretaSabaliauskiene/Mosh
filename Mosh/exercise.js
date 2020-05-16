@@ -50,25 +50,73 @@ function showNumbers(limit){
 let array =  [0, null, undefined, '', 898, 54, 3];
 console.log(countTruthy(array));
 
-
 function countTruthy(array) {
     let count = 0;
     for (let value of array)
         if (value)
-            count++;
+        count++;
     return count;
 }
 
-// string properties should display all the properties of this object that are of type string
+// showProperties
 
 const movie = {
     title: 'a',
-    realeaseYear: 2020,
+    releaseYear: 2018,
     director: 'b'
 };
 
-showNumbers(movie);
+showProperties(movie);
 
 function showProperties(obj){
+    for(let words in obj)
+    if(typeof obj[words] === 'string')
+    console.log(words,obj[words] )
+}
 
+// sum 
+
+console.log(sum(10));
+
+function sum(limit) {
+    let suma = 0;
+
+    for(let i=0; i<=limit; i++)
+        if((i % 3 === 0) || (i % 5 === 0))
+            suma += i;
+    
+    return suma;
+}
+
+// grade of a student
+
+const marks = [80, 80, 50];
+
+console.log(calculateGrade(marks));
+
+function calculateGrade(marks) {
+    const average = calculateAverage(marks);
+  
+        if(average <= 59) return 'F'
+        if(average < 70) return 'D'
+        if(average < 80 ) return 'C'
+        if(average < 90) return 'B'
+         return 'A';    
+}
+
+function calculateAverage(array){
+    let sum = 0;
+    for(let value of array)
+        sum += value;
+    return  sum / array.length;
+}
+ 
+// showStars
+
+showStars(9);
+
+function showStars(rows) {
+    let stars = '';
+for(let i=1; i<=rows; i++)
+    console.log(stars += '*');
 }
