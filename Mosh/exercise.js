@@ -45,3 +45,16 @@ function showNumbers(limit){
         
     }
 }
+// countTruthy takes an array and returs a number or thruthy elements in array
+
+let array =  [0, null, undefined, '', 898, 54, 3];
+console.log(countTruthy(array));
+
+
+function countTruthy(array) {
+    let count = 0;
+    for (let value of array)
+        if (value)
+        count++;
+    return count;
+}
