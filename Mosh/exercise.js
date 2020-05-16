@@ -55,6 +55,20 @@ function countTruthy(array) {
     let count = 0;
     for (let value of array)
         if (value)
-        count++;
+            count++;
     return count;
+}
+
+// string properties should display all the properties of this object that are of type string
+
+const movie = {
+    title: 'a',
+    realeaseYear: 2020,
+    director: 'b'
+};
+
+showNumbers(movie);
+
+function showProperties(obj){
+
 }
