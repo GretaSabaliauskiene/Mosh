@@ -165,9 +165,21 @@ console.log(another1);
 
 // STRING PRIMATIVE
 
-const message = 'hi';
+const message = 
+`This is my 
+first message`;
+
+console.log(message);
+
 
 // STRING OBJECT
 
 const another2 = new String('hi');
 
+// DATE
+
+const now = new Date();
+const date1 = new Date('May 11 2018 09:00');
+const date2 = new Date(2018, 4, 11, 9);
+
+console.log(now);
