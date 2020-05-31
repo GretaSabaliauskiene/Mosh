@@ -183,3 +183,142 @@ const date1 = new Date('May 11 2018 09:00');
 const date2 = new Date(2018, 4, 11, 9);
 
 console.log(now);
+
+// FINFING ELEMENTS IN ARRAY (PRIMITIVES)
+
+let numbers = [1, 2, 3, 1, 4, 5];
+
+console.log(numbers.indexOf('a'));
+console.log(numbers.lastIndexOf(1));
+console.log(numbers.indexOf(1) !== -1 );
+console.log(numbers.includes(1));
+
+// FINFING REFERENCE TYPES IR ARRAYS
+
+let courses = [
+    { id: 1, name: 'a' },
+    { id: 2, name: 'b' },
+];
+
+let course = courses.find(function(course) {
+    return course.name === 'a';
+});
+
+console.log(course);
+
+let courses1 = [
+    { id: 1, name: 'a' },
+    { id: 2, name: 'b' },
+];
+
+let course1 = courses1.findIndex(function(course1) {
+    return course1.name === 'a';
+});
+
+console.log(course1);
+
+// REMOVING ELEMETS
+
+let numers = [1, 2, 3, 4];
+// add to the end 
+numbers.push();
+// remove numbers.pop()
+
+
+// add to the beginning
+numbers.unshift();
+// remove 
+numbers.shift();
+
+
+// add to the middle
+numbers.slice();
+// remove 
+numbers.splice(2, 1);
+
+// EMTYING AN ARRAY
+
+let numbers2 = [1, 2, 3, 4];
+
+// solution 1 
+numbers2 = [];
+//solution 2
+numbers2.length = 0;
+
+
+// OMBINING AND SLICING ARRAYS
+
+let first = [1, 2, 3, 4];
+let second = [5, 6, 7, 8];
+
+first.concat(second);
+
+let slice = second.slice(1, 2);
+
+// SPREAD OPERATOR 
+
+let combined = [...first, ...second];
+
+// if we want to add element in between arrays 
+
+let combined1 = [...first, 'a', ...second];
+
+// ITERATING AN ARRAY 
+
+let numbers5 = [1, 2, 3, 4];
+
+for (let number of numbers5);
+
+numbers.forEach((number, index) =>console.log(index, number)); //shoes index and element
+
+// JOINING ARRAYS
+
+let numbers1 = [1, 2, 3, 4];
+
+numbers1.join(',');
+
+let message1 = 'this is my first message';
+message1.split(' ');
+
+// SORTING ARRAYS
+
+let numbers9 = [2, 3, 1];
+
+numbers9.sort();
+
+numbers9.reverse();
+
+let courses5 = [
+    { id: 1, name: 'Node.js'},
+    { id: 2, name: 'Javascript'},
+]
+
+courses5.sort(function(a, b) {
+    if(a.name < b.name ) return -1;
+    if(a.name > b.name) return 1;
+    return 0;
+});
+
+// TESTING THE ELEMENTS OF AN ARRAY
+
+let numbers8 = [2, 3, 1];
+// finds if all elements are positive
+numbers8.every(function(value){
+    return value >= 0;
+});
+
+// finds if at leats one element is posotove
+numbers8.some(function(value){
+    return value >= 0;
+});
+
+// FILTERING AN ARRAY 
+
+let numbersA = [1, -1, 3, -5];
+
+numbersA.filter(function(value){  //returns filtered array without negative numbers
+    return value >= 0;
+});
+
+// MAPPING AN ARRAY
+
