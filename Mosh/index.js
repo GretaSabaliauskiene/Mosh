@@ -38,12 +38,12 @@ const colors = ['green','yellow','black'];
 for(let index in colors)
 console.log(index,colors[index]);
 
-//FOR-OF used with arrays and maps
-/*const colors = ['green','yellow','black'];
+// FOR-OF used with arrays and maps
+const colors1 = ['green','yellow','black'];
 
-for(let color of colors)
+for(let color of colors1)
 console.log(color);
-*/
+
 //BREAK OR CONTINUE
 let l = 0;
 while (l <= 10) {
