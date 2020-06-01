@@ -269,13 +269,49 @@ function arrayFromRange(min, max){
 // INCLUDES
 // create a function includes(array, searchElement) if we have that element return true if not return false
 
-let numbersR = includes([1, 2, 3, 4], -6);
+let numbersR = includes([1, 2, 3, 4], 2);
 
 console.log(numbersR);
 
 
 function includes(array, searchElement){
-(array.indexOf(searchElement) !== -1 ) ? 'true' : 'false';
-
+    for(let element of array)
+    if(element === searchElement)
+        return true;
+    return false;
 }   
+
+// EXCEPT 
+// we have numbers array and a function called except that takes an array and another array of numbers that need to be excluded
+
+let numbersT = [1, 2, 3, 4, 5];
+
+let outputT = except(numbersT, [1, 2])
+
+console.log(outputT);
+
+function except(array, excluded){
+    let filteredArrT = [];
+    for( let element of array )
+    if( !excluded.includes(element ))
+        filteredArrT.push(element);
+        return filteredArrT;
+}
+
+// MOVING AN ELEMENT 
+// array, the index of the element we want to move and offset
+
+let numbersY = [1, 2, 3, 4, 5];
+
+let outputY = move(numbersY, 1, 2);
+
+console.log(outputY);
+
+function move(array, index, offset) {
+    for (let element of array)
+    console.log(array.indexOf(index) );
+    
+}
+
+
 
