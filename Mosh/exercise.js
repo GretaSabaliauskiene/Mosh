@@ -252,3 +252,30 @@ let priceRanges = [
     {label: '$$$', tooltip: 'Pricey', minPerPerson: 31, maxPerPerson: 50},
 ]
 
+// ARRAY EXERCISE 
+// write a function called arrayFromRange(min, max) 
+
+let numbersE = arrayFromRange(-10, 4);
+
+console.log(numbersE);
+
+function arrayFromRange(min, max){
+    let outPutE = [];
+    for ( let i = min; i <= max; i ++ )
+    outPutE.push(i);
+    return outPutE;
+}
+
+// INCLUDES
+// create a function includes(array, searchElement) if we have that element return true if not return false
+
+let numbersR = includes([1, 2, 3, 4], -6);
+
+console.log(numbersR);
+
+
+function includes(array, searchElement){
+(array.indexOf(searchElement) !== -1 ) ? 'true' : 'false';
+
+}   
+

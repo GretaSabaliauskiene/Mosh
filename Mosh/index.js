@@ -161,7 +161,7 @@ const another1 = {... circle6};
 console.log(another1);
 
 
-// STRING
+// ARRAYS
 
 // STRING PRIMATIVE
 
@@ -269,24 +269,34 @@ let numbers5 = [1, 2, 3, 4];
 
 for (let number of numbers5);
 
-numbers.forEach((number, index) =>console.log(index, number)); //shoes index and element
+numbers.forEach((number, index) =>console.log(index, number)); //shows index and element
 
 // JOINING ARRAYS
 
 let numbers1 = [1, 2, 3, 4];
+let joined  = numbers1.join(',');
+console.log(joined);
 
-numbers1.join(',');
 
 let message1 = 'this is my first message';
-message1.split(' ');
+let parts = message1.split(' ');
+console.log(parts);
+
+let combined2 = parts.join('-');
+console.log(combined2);
+
+
 
 // SORTING ARRAYS
 
 let numbers9 = [2, 3, 1];
 
 numbers9.sort();
+console.log(numbers9);
 
 numbers9.reverse();
+console.log(numbers9);
+
 
 let courses5 = [
     { id: 1, name: 'Node.js'},
@@ -298,27 +308,80 @@ courses5.sort(function(a, b) {
     if(a.name > b.name) return 1;
     return 0;
 });
+console.log(courses5);
+
 
 // TESTING THE ELEMENTS OF AN ARRAY
 
-let numbers8 = [2, 3, 1];
+let numbers8 = [2, -1, 3, 1];
 // finds if all elements are positive
-numbers8.every(function(value){
+let allPositive = numbers8.every(function(value){
     return value >= 0;
 });
+console.log(allPositive);
+
 
 // finds if at leats one element is posotove
-numbers8.some(function(value){
+let somePositive = numbers8.some(function(value){
     return value >= 0;
 });
+console.log(somePositive);
+
 
 // FILTERING AN ARRAY 
 
 let numbersA = [1, -1, 3, -5];
 
-numbersA.filter(function(value){  //returns filtered array without negative numbers
+let filteredArr = numbersA.filter(function(value){  //returns filtered array without negative numbers
     return value >= 0;
 });
+console.log(filteredArr);
+
+
+// same with arrow function:
+
+let filteredArray = numbersA.filter(value => value >= 0 );
+
 
 // MAPPING AN ARRAY
+
+let itemsF = filteredArray.map(value => '<li>' + value + '<li>')
+let html = '<ul>' + itemsF.join('') + '<ul>';
+
+console.log(html);
+
+// mapping numbers in array to obj
+
+let itemsO = filteredArr.map( value => {
+    return { value : value };
+})
+
+console.log(itemsO);
+
+// chaining multiple methods
+
+let itemsNew = numbersA
+    .filter(value => value >=0)
+    .map(value => ({ value:value }))
+    .filter( obj => obj.value > 1)
+    .map( obj => obj.value );
+
+    console.log(itemsNew);
+    
+// REDUCING AN ARRAY 
+
+let numbersQ = [1, -1, 2, 3];
+
+let sumQ = 0;
+for( let n of numbersQ )
+sumQ += n;
+
+console.log(sumQ);
+
+// reduce method has two arguments. the first argument is a callback function and the second is the initial value of the accumilator
+let sumW = numbersQ.reduce(( accumilator, currentValue ) => {
+    return accumilator + currentValue;
+}, 0);
+
+console.log(sumW);
 
